@@ -16,12 +16,11 @@ variable "arm_application_key" {
 
 variable "cloud" {
   description = "Cloud type"
-  type        = map(string)
+  type        = string
 
-  default     = {
-    "eu-central-1" = "aws",
-    "us-east-1" =   "aws",
-    "West Europe" = "azure"
+  validation {
+    condition     = contains(["aws", "azure", "oci", "ali", "gcp"], lower(var.cloud))
+    error_message = "Invalid cloud type. Choose AWS, Azure, GCP, ALI or OCI."
   }
 }
 

@@ -93,10 +93,10 @@ variable "ha_cidr" {
   }
 }
 
-variable "account" {
-  description = "The AWS account name, as known by the Aviatrix controller"
-  type        = string
-}
+# variable "account" {
+#   description = "The AWS account name, as known by the Aviatrix controller"
+#   type        = string
+# }
 
 variable "instance_size" {
   description = "Instance size for the Aviatrix gateways"

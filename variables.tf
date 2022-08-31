@@ -23,11 +23,6 @@ variable "cloud" {
     "us-east-1" =   "aws",
     "West Europe" = "azure"
   }
-
-  validation {
-    condition     = contains(["aws", "azure", "oci", "ali", "gcp"], lower(var.cloud))
-    error_message = "Invalid cloud type. Choose AWS, Azure, GCP, ALI or OCI."
-  }
 }
 
 variable "name" {
